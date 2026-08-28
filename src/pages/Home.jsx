@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import SplatIntro from "../components/SplatIntro";
+import "./Home.css";
 
 function Home() {
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ function Home() {
 
     const timer = setTimeout(() => {
       navigate("/gallery");
-    }, 1500);
+    }, 2000);
 
     return () => {
       clearTimeout(timer);
@@ -38,6 +39,14 @@ function Home() {
         <h1>Digitally Shit On</h1>
         <p>LOL you've been digitally shit on!! HAHA LOSER</p>
       </main>
+
+      <aside className="bait-popup" role="dialog" aria-labelledby="bait-title">
+        <h2 id="bait-title"></h2>
+        <p>Click to exit page.</p>
+        <button type="button" onClick={startMusic}>
+          Click to claim
+        </button>
+      </aside>
     </>
   );
 }
