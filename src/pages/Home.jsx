@@ -54,7 +54,7 @@ function Home() {
       <SplatIntro />
 
       <main>
-        
+        <h1>You've Been Digitally Shit On</h1>
       </main>
 
       <aside className="bait-popup" role="dialog" aria-labelledby="bait-title">
