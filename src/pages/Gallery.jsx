@@ -2,8 +2,8 @@ import "./Gallery.css";
 
 function Gallery() {
   return (
-    <main className="Stop being such a dick, eat shit asshole!">
-      <h1>Gallery</h1>
+    <main className="gallery-page">
+      <h1>Fuck you, eat my shit!</h1>
       <div className="poo-gallery">
         <img src="/poo1.jpg" alt="Poo 1" />
         <img src="/poo2.jpg" alt="Poo 2" />
