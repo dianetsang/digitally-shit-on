@@ -6,27 +6,45 @@ import "./Home.css";
 function Home() {
   const navigate = useNavigate();
 
-  function startMusic() {
+  function playMusic() {
     const music = document.getElementById("take-the-l-audio");
-    const fart = document.getElementById("fart-audio");
 
-    if (!music || !fart) {
+    if (!music) {
       return;
     }
 
     music.play().catch(() => {});
+  }
+
+  function playFart() {
+    const fart = document.getElementById("fart-audio");
+
+    if (!fart) {
+      return;
+    }
+
     fart.currentTime = 0;
     fart.play().catch(() => {});
   }
 
+  function startMusic() {
+    playMusic();
+    playFart();
+  }
+
   useEffect(() => {
-    startMusic();
+    playMusic();
+
+    const splatTimer = setTimeout(() => {
+      playFart();
+    }, 180);
 
     const timer = setTimeout(() => {
       navigate("/gallery");
     }, 3000);
 
     return () => {
+      clearTimeout(splatTimer);
       clearTimeout(timer);
     };
   }, [navigate]);
@@ -36,8 +54,8 @@ function Home() {
       <SplatIntro />
 
       <main>
-        <h1>Digitally Shit On</h1>
-        <p>LOL you've been digitally shit on!! HAHA LOSER</p>
+        
+        <h1>LOL you've been digitally shit on!! HAHA LOSER</h1>
       </main>
 
       <aside className="bait-popup" role="dialog" aria-labelledby="bait-title">

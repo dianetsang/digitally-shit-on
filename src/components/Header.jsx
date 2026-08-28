@@ -1,7 +1,7 @@
 function Header() {
   return (
     <header>
-      <h1>Digitally Shit On</h1>
+      <h1>You've Been Digitally Shit On</h1>
 
       <nav>
         <a href="/">Home</a>
