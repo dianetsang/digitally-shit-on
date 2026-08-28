@@ -1,0 +1,514 @@
+/* =====================================
+   FULL SCREEN CONTAINER
+
+   IMPORTANT:
+   This is transparent.
+
+   The website therefore remains visible
+   behind the poo.
+===================================== */
+
+.splat-screen {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  background: transparent;
+
+  animation: clearSplat 0.25s ease forwards;
+
+  animation-delay: 0.85s;
+}
+
+
+/* =====================================
+   TOP GOO
+===================================== */
+
+.top-goo {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  height: 90px;
+
+  background: #5a321f;
+
+  /*
+     Uneven bottom edge instead of
+     straight rectangle.
+  */
+
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+
+    100% 60%,
+    94% 52%,
+    89% 65%,
+    83% 55%,
+    76% 72%,
+    69% 57%,
+    62% 67%,
+    55% 54%,
+    48% 73%,
+    41% 58%,
+    34% 68%,
+    27% 53%,
+    20% 70%,
+    13% 57%,
+    7% 67%,
+    0% 55%
+  );
+
+  transform: translateY(-100%);
+
+  animation: topSplat 0.25s ease-out forwards;
+
+  animation-delay: 0.08s;
+}
+
+
+/* Goo drops into screen */
+
+@keyframes topSplat {
+
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =====================================
+   TOP DRIPS
+===================================== */
+
+.top-drip {
+  position: absolute;
+
+  top: 50px;
+
+  background: #5a321f;
+
+  border-radius: 0 0 50% 50%;
+
+  transform-origin: top;
+
+  transform: scaleY(0);
+
+  animation: dripGrow 0.35s ease-in forwards;
+
+  animation-delay: 0.25s;
+}
+
+
+.td1 {
+  left: 7%;
+
+  width: 28px;
+  height: 100px;
+}
+
+
+.td2 {
+  left: 22%;
+
+  width: 42px;
+  height: 160px;
+}
+
+
+.td3 {
+  left: 39%;
+
+  width: 24px;
+  height: 75px;
+}
+
+
+.td4 {
+  left: 56%;
+
+  width: 38px;
+  height: 135px;
+}
+
+
+.td5 {
+  left: 73%;
+
+  width: 25px;
+  height: 90px;
+}
+
+
+.td6 {
+  left: 89%;
+
+  width: 34px;
+  height: 125px;
+}
+
+
+@keyframes dripGrow {
+
+  from {
+    transform: scaleY(0);
+  }
+
+  to {
+    transform: scaleY(1);
+  }
+
+}
+
+
+/* =====================================
+   MAIN SPLAT CONTAINER
+===================================== */
+
+.splat-center {
+
+  position: absolute;
+
+  left: 50%;
+  top: 52%;
+
+  width: 300px;
+  height: 300px;
+
+  transform:
+    translate(-50%, -50%)
+    scale(0);
+
+  animation: splatImpact 0.32s ease-out forwards;
+}
+
+
+/* =====================================
+   MAIN POO MASS
+===================================== */
+
+.splat-core {
+
+  position: absolute;
+
+  width: 520px;
+  height: 400px;
+
+  left: -110px;
+  top: -50px;
+
+  background: #5a321f;
+
+  /*
+     Organic blob.
+
+     Not perfectly round and
+     not aggressively spiky.
+  */
+
+  border-radius:
+    47% 53% 42% 58%
+    /
+    51% 43% 57% 49%;
+
+}
+
+
+/* =====================================
+   SPLAT ARMS
+
+   These are intentionally chunky,
+   rounded and different sizes.
+
+   This prevents the "brown star"
+   appearance.
+===================================== */
+
+.arm {
+
+  position: absolute;
+
+  left: 150px;
+  top: 145px;
+
+  background: #5a321f;
+
+  transform-origin: left center;
+
+  border-radius:
+    45% 55% 50% 50%
+    /
+    50% 45% 55% 50%;
+}
+
+
+/* RIGHT */
+
+.a1 {
+
+  width: 480px;
+  height: 55px;
+
+  transform: rotate(-7deg);
+
+}
+
+
+/* LOWER RIGHT */
+
+.a2 {
+
+  width: 350px;
+  height: 40px;
+
+  transform: rotate(28deg);
+
+}
+
+
+/* DOWN RIGHT */
+
+.a3 {
+
+  width: 420px;
+  height: 48px;
+
+  transform: rotate(67deg);
+
+}
+
+
+/* DOWN */
+
+.a4 {
+
+  width: 390px;
+  height: 60px;
+
+  transform: rotate(96deg);
+
+}
+
+
+/* LOWER LEFT */
+
+.a5 {
+
+  width: 360px;
+  height: 45px;
+
+  transform: rotate(142deg);
+
+}
+
+
+/* LEFT */
+
+.a6 {
+
+  width: 470px;
+  height: 58px;
+
+  transform: rotate(184deg);
+
+}
+
+
+/* UPPER LEFT */
+
+.a7 {
+
+  width: 330px;
+  height: 38px;
+
+  transform: rotate(220deg);
+
+}
+
+
+/* UPPER RIGHT */
+
+.a8 {
+
+  width: 370px;
+  height: 45px;
+
+  transform: rotate(300deg);
+
+}
+
+
+/* =====================================
+   SMALL GLOBS
+
+   These make the splatter feel less
+   geometrically perfect.
+===================================== */
+
+.glob {
+
+  position: absolute;
+
+  background: #5a321f;
+
+  border-radius:
+    55% 45% 60% 40%
+    /
+    45% 60% 40% 55%;
+
+}
+
+
+.g1 {
+
+  width: 55px;
+  height: 40px;
+
+  left: -230px;
+  top: -100px;
+
+  transform: rotate(20deg);
+
+}
+
+
+.g2 {
+
+  width: 30px;
+  height: 24px;
+
+  left: 450px;
+  top: -120px;
+
+}
+
+
+.g3 {
+
+  width: 42px;
+  height: 34px;
+
+  left: 550px;
+  top: 180px;
+
+  transform: rotate(-25deg);
+
+}
+
+
+.g4 {
+
+  width: 35px;
+  height: 48px;
+
+  left: 390px;
+  top: 470px;
+
+}
+
+
+.g5 {
+
+  width: 48px;
+  height: 36px;
+
+  left: -250px;
+  top: 330px;
+
+  transform: rotate(30deg);
+
+}
+
+
+.g6 {
+
+  width: 24px;
+  height: 20px;
+
+  left: -120px;
+  top: 500px;
+
+}
+
+
+/* =====================================
+   SPLAT IMPACT
+===================================== */
+
+@keyframes splatImpact {
+
+  0% {
+
+    transform:
+      translate(-50%, -50%)
+      scale(0);
+
+    opacity: 0;
+
+  }
+
+
+  60% {
+
+    transform:
+      translate(-50%, -50%)
+      scale(1.08);
+
+    opacity: 1;
+
+  }
+
+
+  80% {
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.96);
+
+  }
+
+
+  100% {
+
+    transform:
+      translate(-50%, -50%)
+      scale(1);
+
+    opacity: 1;
+
+  }
+
+}
+
+
+/* =====================================
+   WHOLE THING DISAPPEARS
+===================================== */
+
+@keyframes clearSplat {
+
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+
+}
