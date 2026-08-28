@@ -6,21 +6,23 @@ import Gallery from "./pages/Gallery";
 
 function App() {
   useEffect(() => {
-    function playFartOnClick() {
+    function playAudioOnClick() {
+      const music = document.getElementById("take-the-l-audio");
       const fart = document.getElementById("fart-audio");
 
-      if (!fart) {
+      if (!music || !fart) {
         return;
       }
 
+      music.play().catch(() => {});
       fart.currentTime = 0;
       fart.play().catch(() => {});
     }
 
-    document.addEventListener("click", playFartOnClick);
+    document.addEventListener("click", playAudioOnClick);
 
     return () => {
-      document.removeEventListener("click", playFartOnClick);
+      document.removeEventListener("click", playAudioOnClick);
     };
   }, []);
 
