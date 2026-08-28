@@ -55,7 +55,6 @@ function Home() {
 
       <main>
         
-        <h1>LOL you've been digitally shit on!! HAHA LOSER</h1>
       </main>
 
       <aside className="bait-popup" role="dialog" aria-labelledby="bait-title">
