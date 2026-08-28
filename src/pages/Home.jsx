@@ -24,7 +24,7 @@ function Home() {
 
     const timer = setTimeout(() => {
       navigate("/gallery");
-    }, 2000);
+    }, 3000);
 
     return () => {
       clearTimeout(timer);
