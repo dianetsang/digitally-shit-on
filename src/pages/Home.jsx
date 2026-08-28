@@ -44,7 +44,7 @@ function Home() {
         <h2 id="bait-title"></h2>
         <p>Click to exit page.</p>
         <button type="button" onClick={startMusic}>
-          Click to claim
+          Leave!
         </button>
       </aside>
     </>
